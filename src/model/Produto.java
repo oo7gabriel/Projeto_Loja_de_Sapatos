@@ -106,7 +106,7 @@ public abstract class Produto {
 	
 	//Cálculo da Taxa de Lucro
 	
-	public double taxaDeLucro(double taxaLucro){
+	public double taxaDeLucro(){
 		return (precoVenda-precoAtacado) / 100;
 	}
 	
