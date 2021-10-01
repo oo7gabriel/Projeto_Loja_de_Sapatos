@@ -1,14 +1,28 @@
 package view;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.AncestorListener;
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 public class Login_Menu extends JFrame implements ActionListener {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static JFrame janelaLogin = new JFrame("Heaven's Shoes");
 	private static JPanel painelJanela;
-	private static JLabel tituloLogin = new JLabel("LOGIN");
+	private static JLabel tituloLogin = new JLabel("Login");
+	private static JLabel tituloLogin2 = new JLabel(" ");
 	private static JLabel usuarioLab = new JLabel();
 	private static JLabel senhaLab = new JLabel();
 	private static JTextField usuarioCampo;
@@ -18,6 +32,7 @@ public class Login_Menu extends JFrame implements ActionListener {
 	
 	public Login_Menu() {
 		tituloLogin.setFont(new Font("Arial", Font.ITALIC, 14));
+		tituloLogin2.setFont(new Font("Arial", Font.ITALIC, 14));
 		
 		//Campo do Usuário 
 		usuarioLab.setText("Usuario: ");
@@ -27,9 +42,10 @@ public class Login_Menu extends JFrame implements ActionListener {
 		senhaLab.setText("Senha: ");
 		senhaCampo = new JPasswordField();
 	
-		painelJanela =  new JPanel(new GridLayout(3,1));
+		painelJanela =  new JPanel(new GridLayout(4,1));
 		
-		janelaLogin.add(tituloLogin);
+		painelJanela.add(tituloLogin2);
+		painelJanela.add(tituloLogin);
 		painelJanela.add(usuarioLab);
 		painelJanela.add(usuarioCampo);
 		painelJanela.add(senhaLab);
@@ -38,8 +54,10 @@ public class Login_Menu extends JFrame implements ActionListener {
 		
 		janelaLogin.add(painelJanela, BorderLayout.CENTER);
 		
-		janelaLogin.setSize(300, 100);
+		janelaLogin.setLocation(500, 200);
+		janelaLogin.setSize(400, 100);
 		janelaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janelaLogin.setResizable(false);
 		janelaLogin.setVisible(true);
 		
 	}
@@ -48,6 +66,7 @@ public class Login_Menu extends JFrame implements ActionListener {
 		Login_Menu menuLogin = new Login_Menu();
 		
 		logar.addActionListener(menuLogin);
+		
 	}
 	
 	
@@ -55,14 +74,38 @@ public class Login_Menu extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String validaUsuario = usuarioCampo.getText();
-		String validaSenha = senhaCampo.getText();
+		String validaSenha = senhaCampo.getText();// O .getText() do valida senha está depreciado.
+		
 		
 		if(validaUsuario.trim().equals("Admin") && validaSenha.trim().equals("1234")) {
 			System.out.println("Login Admin OK!");
+			new Menu_Admin();
+			
+			janelaLogin.dispose();
+			
+			
 		}else if(validaUsuario.trim().equals("Func") && validaSenha.trim().equals("5678")) {
 			System.out.println("Login Func OK!");
-		}else {
-			System.out.println("Error Login!");
+			
+			new Menu_Func();
+			
+			janelaLogin.dispose();
+			
+		}else if(validaUsuario.trim().equals("") && validaSenha.trim().equals("")){
+			JOptionPane.showMessageDialog(null, 
+					"Erro Login Inválido", null, 
+					JOptionPane.INFORMATION_MESSAGE);
+			
+		} else if(validaUsuario.trim().equals("")){
+			JOptionPane.showMessageDialog(null, 
+					"Erro Usuario Inválido", null, 
+					JOptionPane.INFORMATION_MESSAGE);
+			
+		}else if(validaSenha.trim().equals("")){
+			JOptionPane.showMessageDialog(null, 
+					"Erro Senha Inválida", null, 
+					JOptionPane.INFORMATION_MESSAGE);
+		
 		}
 		
 	}
