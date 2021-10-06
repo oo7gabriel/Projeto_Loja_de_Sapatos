@@ -13,12 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Login_Menu extends JFrame implements ActionListener {
+public class Login_Menu implements ActionListener {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private static JFrame janelaLogin = new JFrame("Heaven's Shoes");
 	private static JPanel painelJanela;
 	private static JLabel tituloLogin = new JLabel("Login");
