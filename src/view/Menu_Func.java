@@ -17,44 +17,45 @@ public class Menu_Func implements ActionListener{
 	
 	//private List<Funcionario>  funcionario = new ArrayList<>();
 	
+	private JMenuBar barra_menu  = new JMenuBar();
+	
+	private JMenu menu_opcao1 = new JMenu("Inicio");
+	private JMenu menu_opcao2 = new JMenu("Ações");
+	private JMenu menu_opcao3 = new JMenu("Perfil");
+	private JMenu menu_opcao4 = new JMenu("Sair");
+	
+	private JMenu cliente_opcao_func = new JMenu("Cliente");
+	private JMenu venda_opcao_func = new JMenu("Venda");
+	private JMenu sapato_opcao_func = new JMenu("Sapato");
+	private JMenu acessorio_opcao_func = new JMenu("Acessorio");
+	private JMenu estoque_opcao_func = new JMenu("Estoque");
+	
+	
+	
+	private JMenuItem cadastrar_cliente_opcao = new JMenuItem("Cadastrar Cliente");
+	private JMenuItem alterar_cliente_opcao = new JMenuItem("Alterar Informação Cliente");
+	private JMenuItem deletar_cliente_opcao = new JMenuItem("Deletar Cliente");
+	
+	private JMenuItem venda_cadastrar_opcao = new JMenuItem("Cadastrar Venda");
+	
+	private JMenuItem acessorio_cadastrar_opcao = new JMenuItem("Cadastrar Acessório");
+	private JMenuItem acessorio_alterar_opcao = new JMenuItem("Alterar Informação Acessório");
+	private JMenuItem acessorio_apagar_opcao = new JMenuItem("Apagar Acessório");
+	
+	private JMenuItem sapato_cadastrar_opcao = new JMenuItem("Cadastrar Sapato");
+	private JMenuItem sapato_alterar_opcao = new JMenuItem("Alterar Informação Sapato");
+	private JMenuItem sapato_apagar_opcao = new JMenuItem("Apagar Sapato");
+	
+	private JMenuItem estoque_cadastrar_opcao = new JMenuItem("Cadastrar Estoque");
+	private JMenuItem estoque_alterar_opcao = new JMenuItem("Alterar Informação Estoque");
+	
+	//JLabel imagem = new JLabel();  
+
 	public Menu_Func() {
 		tituloFunc.setFont(new Font("Arial", Font.BOLD, 14));
 		tituloFunc.setText("Funcionário");
 		tituloFunc.setBounds(640, 0, 150, 30);
 		
-		JMenuBar barra_menu  = new JMenuBar();
-		
-		JMenu menu_opcao1 = new JMenu("Inicio");
-		JMenu menu_opcao2 = new JMenu("Ações");
-		JMenu menu_opcao3 = new JMenu("Perfil");
-		JMenu menu_opcao4 = new JMenu("Sair");
-		
-		JMenu cliente_opcao_func = new JMenu("Cliente");
-		JMenu venda_opcao_func = new JMenu("Venda");
-		JMenu sapato_opcao_func = new JMenu("Sapato");
-		JMenu acessorio_opcao_func = new JMenu("Acessorio");
-		JMenu estoque_opcao_func = new JMenu("Estoque");
-		
-		
-		
-		JMenuItem cadastrar_cliente_opcao = new JMenuItem("Cadastrar Cliente");
-		JMenuItem alterar_cliente_opcao = new JMenuItem("Alterar Informação Cliente");
-		JMenuItem deletar_cliente_opcao = new JMenuItem("Deletar Cliente");
-		
-		JMenuItem venda_cadastrar_opcao = new JMenuItem("Cadastrar Venda");
-		
-		JMenuItem acessorio_cadastrar_opcao = new JMenuItem("Cadastrar Acessório");
-		JMenuItem acessorio_alterar_opcao = new JMenuItem("Alterar Informação Acessório");
-		JMenuItem acessorio_apagar_opcao = new JMenuItem("Apagar Acessório");
-		
-		JMenuItem sapato_cadastrar_opcao = new JMenuItem("Cadastrar Sapato");
-		JMenuItem sapato_alterar_opcao = new JMenuItem("Alterar Informação Sapato");
-		JMenuItem sapato_apagar_opcao = new JMenuItem("Apagar Sapato");
-		
-		JMenuItem estoque_cadastrar_opcao = new JMenuItem("Cadastrar Estoque");
-		JMenuItem estoque_alterar_opcao = new JMenuItem("Alterar Informação Estoque");
-		
-		//JLabel imagem = new JLabel();  
 		
 		janelaFunc.setLayout(null);
 		janelaFunc.setJMenuBar(barra_menu);

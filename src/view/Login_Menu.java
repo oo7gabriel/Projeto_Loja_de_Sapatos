@@ -1,59 +1,64 @@
 package view;
-import java.awt.BorderLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Login_Menu implements ActionListener {
 	
 	private static JFrame janelaLogin = new JFrame("Heaven's Shoes");
-	private static JPanel painelJanela;
-	private static JLabel tituloLogin = new JLabel("Login");
-	private static JLabel tituloLogin2 = new JLabel(" ");
+	private static JLabel tituloLogin = new JLabel("LOGIN");
+	private ImageIcon imageLogo = new ImageIcon(getClass().getResource("/images/logo.png"));
+	private JLabel campoImagem = new JLabel(imageLogo);
 	private static JLabel usuarioLab = new JLabel();
 	private static JLabel senhaLab = new JLabel();
 	private static JTextField usuarioCampo;
 	private static JPasswordField senhaCampo;
-	private static JButton logar = new JButton("Logar");
+	private static JButton logar;
 	
 	
 	public Login_Menu() {
 		tituloLogin.setFont(new Font("Arial", Font.ITALIC, 14));
-		tituloLogin2.setFont(new Font("Arial", Font.ITALIC, 14));
+		tituloLogin.setBounds(120, 0,50, 20);
+		
+		campoImagem.setBounds(90, 20, 100, 75);
 		
 		//Campo do Usuário 
-		usuarioLab.setText("Usuario: ");
-		usuarioCampo = new JTextField(); 
+		usuarioLab.setText("Usuário :");
+		usuarioLab.setBounds(20,120, 50 , 20);
+		usuarioCampo = new JTextField();
+		usuarioCampo.setBounds(80, 120, 180, 20);
 		
 		// Campo da Senha
-		senhaLab.setText("Senha: ");
+		senhaLab.setText("Senha:");
+		senhaLab.setBounds(20,150,50,20);
 		senhaCampo = new JPasswordField();
-	
-		painelJanela =  new JPanel(new GridLayout(4,1));
+		senhaCampo.setBounds(80, 150, 180, 20);
 		
-		painelJanela.add(tituloLogin2);
-		painelJanela.add(tituloLogin);
-		painelJanela.add(usuarioLab);
-		painelJanela.add(usuarioCampo);
-		painelJanela.add(senhaLab);
-		painelJanela.add(senhaCampo);
-		painelJanela.add(logar);
+		logar = new JButton("LOGAR");
+		logar.setBounds(100,200,100,30);
 		
-		janelaLogin.add(painelJanela, BorderLayout.CENTER);
+		janelaLogin.add(tituloLogin);
+		janelaLogin.add(campoImagem);
+		janelaLogin.add(usuarioLab);
+		janelaLogin.add(usuarioCampo);
+		janelaLogin.add(senhaLab);
+		janelaLogin.add(senhaCampo);
+		janelaLogin.add(logar);
 		
-		janelaLogin.setLocation(500, 200);
-		janelaLogin.setSize(400, 100);
-		janelaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		janelaLogin.setLayout(null);
+		
+		janelaLogin.setSize(300,300);
 		janelaLogin.setResizable(false);
+		janelaLogin.setLocationRelativeTo(null);
+		janelaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janelaLogin.setVisible(true);
 		
 	}
