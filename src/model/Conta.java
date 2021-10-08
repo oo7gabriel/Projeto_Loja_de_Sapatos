@@ -1,6 +1,6 @@
 package model;
 
-public class Conta {
+public abstract class Conta {
 	private int idConta;
 	private String usuario;
 	private String senha;
@@ -48,8 +48,4 @@ public class Conta {
 		this.nivel = nivel;
 	}
 	
-	public int Sair() {
-		//Função Sair da sessão de login
-		return 0;
-	}
 }

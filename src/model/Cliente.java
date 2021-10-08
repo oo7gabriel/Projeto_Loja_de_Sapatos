@@ -60,15 +60,4 @@ public class Cliente {
 		this.endCliente = endCliente;
 	}
 	
-	public void filtrarNomeCliente() {
-		//filtro do nome do Cliente;
-	}
-	
-	public void filtrarCpfCliente() {
-		//filtro do cpf do Cliente;
-	}
-	
-	
-	
-	
 }

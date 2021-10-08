@@ -2,7 +2,6 @@ package model;
 
 public class Administrador extends Conta{
 
-	private int idAdmin;
 	private String nomeAdmin;
 	private String telefone;
 	private String email;
@@ -16,20 +15,9 @@ public class Administrador extends Conta{
 	public Administrador(int idConta, String usuario, String senha, int nivel, int idAdmin, String nomeAdmin,
 			String telefone, String email) {
 		super(idConta, usuario, senha, nivel);
-		this.idAdmin = idAdmin;
 		this.nomeAdmin = nomeAdmin;
 		this.telefone = telefone;
 		this.email = email;
-	}
-
-
-	public int getIdAdmin() {
-		return idAdmin;
-	}
-
-
-	public void setIdAdmin(int idAdmin) {
-		this.idAdmin = idAdmin;
 	}
 
 
@@ -61,9 +49,6 @@ public class Administrador extends Conta{
 	public void setEmail(String email) {
 		this.email = email;
 	}	
-	
-	
-	
 	
 }
 	

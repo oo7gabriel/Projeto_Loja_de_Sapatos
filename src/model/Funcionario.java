@@ -2,7 +2,6 @@ package model;
 
 public class Funcionario extends Conta {
 	
-	private int idFunc;
 	private String nomeFunc;
 	private String telefone;
 	private int vendas_realizadas;
@@ -18,21 +17,12 @@ public class Funcionario extends Conta {
 	public Funcionario(int idConta, String usuario, String senha, int nivel, int idFunc, String nomeFunc,
 			String telefone, int vendas_realizadas, String email, Endereco endFunc, Salario salFunc) {
 		super(idConta, usuario, senha, nivel);
-		this.idFunc = idFunc;
 		this.nomeFunc = nomeFunc;
 		this.telefone = telefone;
 		this.vendas_realizadas = vendas_realizadas;
 		this.email = email;
 		this.endFunc = endFunc;
 		this.salFunc = salFunc;
-	}
-
-	public int getIdFunc() {
-		return idFunc;
-	}
-
-	public void setIdFunc(int idFunc) {
-		this.idFunc = idFunc;
 	}
 
 	public String getNomeFunc() {

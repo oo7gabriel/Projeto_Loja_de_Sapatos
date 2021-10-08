@@ -2,6 +2,8 @@ package view;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,16 +13,19 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import model.Administrador;
+import model.Funcionario;
+
 public class Login_Menu implements ActionListener {
 	
 	private static JFrame janelaLogin = new JFrame("Heaven's Shoes");
 	private static JLabel tituloLogin = new JLabel("LOGIN");
 	private ImageIcon imageLogo = new ImageIcon(getClass().getResource("/images/logo.png"));
 	private JLabel campoImagem = new JLabel(imageLogo);
-	private static JLabel usuarioLab = new JLabel();
-	private static JLabel senhaLab = new JLabel();
-	private static JTextField usuarioCampo;
-	private static JPasswordField senhaCampo;
+	private JLabel usuarioLab = new JLabel();
+	private JLabel senhaLab = new JLabel();
+	private JTextField usuarioCampo;
+	private JPasswordField senhaCampo;
 	private static JButton logar;
 	
 	
@@ -64,19 +69,17 @@ public class Login_Menu implements ActionListener {
 	}
 	
 	public static void main(String[] args) {
+		
 		Login_Menu menuLogin = new Login_Menu();
 		
 		logar.addActionListener(menuLogin);
-		
 	}
-	
 	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String validaUsuario = usuarioCampo.getText();
 		String validaSenha = senhaCampo.getText();// O .getText() do valida senha está depreciado.
-		
 		
 		if(validaUsuario.trim().equals("Admin") && validaSenha.trim().equals("1234")) {
 			System.out.println("Login Admin OK!");

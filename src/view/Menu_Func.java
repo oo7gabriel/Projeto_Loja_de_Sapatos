@@ -9,13 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
-public class Menu_Func implements ActionListener{
+public class Menu_Func implements ActionListener , MenuListener{
 	
 	private static JFrame janelaFunc = new JFrame("Heaven's Shoes");
 	private static JLabel tituloFunc = new JLabel();
-	
-	//private List<Funcionario>  funcionario = new ArrayList<>();
 	
 	private JMenuBar barra_menu  = new JMenuBar();
 	
@@ -53,7 +53,7 @@ public class Menu_Func implements ActionListener{
 
 	public Menu_Func() {
 		tituloFunc.setFont(new Font("Arial", Font.BOLD, 14));
-		tituloFunc.setText("Funcionário");
+		tituloFunc.setText("FUNCIONÁRIO");
 		tituloFunc.setBounds(640, 0, 150, 30);
 		
 		
@@ -89,9 +89,9 @@ public class Menu_Func implements ActionListener{
 		estoque_opcao_func.add(estoque_cadastrar_opcao);
 		estoque_opcao_func.add(estoque_alterar_opcao);
 		
-		menu_opcao1.addActionListener(null);
-		menu_opcao3.addActionListener(null);
-		menu_opcao4.addActionListener(null);
+		menu_opcao1.addMenuListener(this);
+		menu_opcao3.addMenuListener(this);
+		menu_opcao4.addMenuListener(this);
 		
 		
 		cliente_opcao_func.addActionListener(null);
@@ -131,8 +131,45 @@ public class Menu_Func implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		//Object evento = e.getSource();
+		Object evento = e.getSource();
+		
+		//if(evento == menu_opcao3) {
+			
+		//}
+		
+	}	
+	
+	@Override
+	public void menuSelected(MenuEvent e) {
+		Object eventoMenu = e.getSource();
+		
+		if(eventoMenu == menu_opcao1) {
+			janelaFunc.dispose();
+			new Menu_Func();
+		}
+		
+		if(eventoMenu == menu_opcao3) {
+			janelaFunc.dispose();
+			new Menu_Func();
+		}
+		
+		if(eventoMenu == menu_opcao4) {
+			janelaFunc.dispose();
+		}
+		
+		
+		
+	}
 
+	@Override
+	public void menuDeselected(MenuEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void menuCanceled(MenuEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 }

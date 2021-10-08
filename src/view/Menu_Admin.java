@@ -9,13 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 
-public class Menu_Admin implements ActionListener{
+public class Menu_Admin implements ActionListener, MenuListener{
 	
 	private static JFrame janelaAdmin = new JFrame("Heaven's Shoes");
-	private static JLabel tituloAdmin = new JLabel();
-	
-	//private Administrador adm;
+	private JLabel tituloAdmin = new JLabel();
 	
 	private JMenuBar barra_menu_admin  = new JMenuBar();
 	
@@ -56,7 +56,7 @@ public class Menu_Admin implements ActionListener{
 	
 	public Menu_Admin() {
 		tituloAdmin.setFont(new Font("Arial", Font.BOLD, 14));
-		tituloAdmin.setText("Administrador");
+		tituloAdmin.setText("ADMNINISTRADOR");
 		tituloAdmin.setBounds(640, 0, 150, 30);
 		
 		
@@ -94,9 +94,9 @@ public class Menu_Admin implements ActionListener{
 		estoque_opcao_admin.add(estoque_cadastrar_opcao);
 		estoque_opcao_admin.add(estoque_alterar_opcao);
 		
-		menu_opcao1_admin.addActionListener(null);
-		menu_opcao3_admin.addActionListener(null);
-		menu_opcao4_admin.addActionListener(null);
+		menu_opcao1_admin.addMenuListener(this);
+		menu_opcao3_admin.addMenuListener(this);
+		menu_opcao4_admin.addMenuListener(this);
 		
 		
 		cliente_opcao_admin.addActionListener(null);
@@ -129,9 +129,9 @@ public class Menu_Admin implements ActionListener{
 		
 		janelaAdmin.add(tituloAdmin);
 		
-		janelaAdmin.setLocation(0, 0);
 		janelaAdmin.setSize(1280, 720);
 		janelaAdmin.setResizable(false);
+		janelaAdmin.setLocationRelativeTo(null);
 		janelaAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		janelaAdmin.setVisible(true);
@@ -143,6 +143,41 @@ public class Menu_Admin implements ActionListener{
 
 		//Object evento = e.getSource();
 
+		
+	}
+	
+
+	@Override
+	public void menuSelected(MenuEvent e) {
+		Object eventoMenu = e.getSource();
+		
+		if(eventoMenu == menu_opcao1_admin) {
+			janelaAdmin.dispose();
+			new Menu_Func();
+		}
+		
+		if(eventoMenu == menu_opcao3_admin) {
+			janelaAdmin.dispose();
+			new Menu_Func();
+		}
+		
+		if(eventoMenu == menu_opcao4_admin) {
+			janelaAdmin.dispose();
+		}
+		
+		
+		
+	}
+
+	@Override
+	public void menuDeselected(MenuEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void menuCanceled(MenuEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 	
