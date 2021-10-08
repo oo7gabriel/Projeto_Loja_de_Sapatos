@@ -100,29 +100,4 @@ public abstract class Produto {
 		this.taxaLucro = taxaLucro;
 	}
 	
-	
-	//Campos para Crud
-	
-	
-	//Cálculo da Taxa de Lucro
-	
-	public double taxaDeLucro(){
-		return (precoVenda-precoAtacado) / 100;
-	}
-	
-	//Filtro por Nome do Produto
-	
-	public void filtrarNomeProd() {
-		
-	}
-	
-	//Filtro por marca do do Produto
-	
-	public void filtarMarcar() {
-		
-	}
-	
-	
-	
-	
 }

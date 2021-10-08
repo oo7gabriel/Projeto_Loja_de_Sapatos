@@ -22,8 +22,5 @@ public class Acessorio extends Produto{
 		this.uso = uso;
 	}
 	
-	public void filtrarNomeAcessorio() {
-		//Função de filtro de nome de acessórios cadastrados
-	}
 	
 }
