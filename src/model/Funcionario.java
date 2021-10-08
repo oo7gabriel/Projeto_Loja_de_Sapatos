@@ -14,7 +14,7 @@ public class Funcionario extends Conta {
 		super();
 	}
 
-	public Funcionario(int idConta, String usuario, String senha, int nivel, int idFunc, String nomeFunc,
+	public Funcionario(int idConta, String usuario, String senha, int nivel, String nomeFunc,
 			String telefone, int vendas_realizadas, String email, Endereco endFunc, Salario salFunc) {
 		super(idConta, usuario, senha, nivel);
 		this.nomeFunc = nomeFunc;

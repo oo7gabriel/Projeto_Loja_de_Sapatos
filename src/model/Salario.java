@@ -1,25 +1,25 @@
 package model;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Salario {
 
-	private Date mes;
+	private SimpleDateFormat mes;
 	private double salarioFixo ;
 	
 	public Salario() {
 	}
 
-	public Salario(Date mes, double salarioFixo) {
+	public Salario(SimpleDateFormat mes, double salarioFixo) {
 		this.mes = mes;
 		this.salarioFixo = salarioFixo;
 	}
 
-	public Date getMes() {
+	public SimpleDateFormat getMes() {
 		return mes;
 	}
 
-	public void setMes(Date mes) {
+	public void setMes(SimpleDateFormat mes) {
 		this.mes = mes;
 	}
 
@@ -31,9 +31,5 @@ public class Salario {
 		this.salarioFixo = salarioFixo;
 	}
 	
-	public double consultaComissao() {
-		//Função para realizar cálculo de comissão do salário
-		return 0.0;
-	}
 	
 }

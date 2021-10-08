@@ -1,23 +1,27 @@
 package model;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Venda {
 	
 	private int idVenda;
-	private Date dataVenda;
-	private Date horaVenda;
+	private SimpleDateFormat dataVenda;
+	private SimpleDateFormat horaVenda;
 	private double commissaoVenda;
 	
 	Cliente clie;
 	Funcionario func;
+	Sapato sapato;
+	Acessorio acessorios;
 	
 	public Venda() {
 	}
 
-	public Venda(int idVenda, Date dataVenda, Date horaVenda, double commissaoVenda, Cliente clie, Funcionario func) {
+	public Venda(int idVenda,Sapato sapato, Acessorio acessorios, SimpleDateFormat dataVenda, SimpleDateFormat horaVenda, double commissaoVenda, Cliente clie, Funcionario func) {
 		super();
 		this.idVenda = idVenda;
+		this.sapato = sapato;
+		this.acessorios = acessorios;
 		this.dataVenda = dataVenda;
 		this.horaVenda = horaVenda;
 		this.commissaoVenda = commissaoVenda;
@@ -33,19 +37,19 @@ public class Venda {
 		this.idVenda = idVenda;
 	}
 
-	public Date getDataVenda() {
+	public SimpleDateFormat getDataVenda() {
 		return dataVenda;
 	}
 
-	public void setDataVenda(Date dataVenda) {
+	public void setDataVenda(SimpleDateFormat dataVenda) {
 		this.dataVenda = dataVenda;
 	}
 
-	public Date getHoraVenda() {
+	public SimpleDateFormat getHoraVenda() {
 		return horaVenda;
 	}
 
-	public void setHoraVenda(Date horaVenda) {
+	public void setHoraVenda(SimpleDateFormat horaVenda) {
 		this.horaVenda = horaVenda;
 	}
 
