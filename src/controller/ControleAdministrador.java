@@ -1,37 +1,33 @@
 package controller;
 
-import java.util.List;
-
 import model.Administrador;
 
 public class ControleAdministrador {
 	
-	private List<Administrador> a;
+	private Administrador a;
 
 	public ControleAdministrador(Controle_Dados dado) {
 		a = dado.getAdminis();
 	}
 	
-	public String getUsuario(int i) {
-		return a.get(i).getUsuario();
+	public String getUsuario() {
+		return a.getUsuario();
 	}
 	
-	public String getSenha(int i) {
-		return a.get(i).getSenha();
+	public String getSenha() {
+		return a.getSenha();
 	}
 	
-	public String getNomeAdmin(int i) {
-		return a.get(i).getNomeAdmin();
+	public String getNomeAdmin() {
+		return a.getNomeAdmin();
 	}
 	
-	public String getTelefone(int i) {
-		return a.get(i).getTelefone();
+	public String getTelefone() {
+		return a.getTelefone();
 	}
 	
-	public String getEmail(int i) {
-		return a.get(i).getEmail();
+	public String getEmail() {
+		return a.getEmail();
 	}
 
-	
-	
 }

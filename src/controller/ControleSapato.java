@@ -1,23 +1,20 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.Sapato;
 
 public class ControleSapato {
-	private List<Sapato> s;
+	private Sapato[] s;
 	private int qtdSapato;
 	
 	public ControleSapato(Controle_Dados dado) {
 		s = dado.getSap();
-		qtdSapato = s.size();
+		qtdSapato = dado.getQtdSap();
 	}
 	
-	public List<String> getNomeSapL() {
-		List<String> sc = new ArrayList<String>(qtdSapato);
+	public String[] getNomeSapL() {
+		String[] sc = new String[qtdSapato];
 		for(int i = 0; i < qtdSapato; i++) {
-			sc.add(s.get(i).getNomeProduto());
+			sc[i] = s[i].getNomeProduto();
 		}
 		
 		return sc;
@@ -32,46 +29,46 @@ public class ControleSapato {
 	}
 	
 	public String getNomeProduto(int i) {
-		return s.get(i).getNomeProduto();
+		return s[i].getNomeProduto();
 	}
 	
 	public double getPrecoVenda(int i) {
-		return s.get(i).getPrecoVenda();
+		return s[i].getPrecoVenda();
 	}
 	
 	public double getPrecoAtacado(int i) {
-		return s.get(i).getPrecoAtacado();
+		return s[i].getPrecoAtacado();
 	}
 	
 	public String getMarca(int i) {
-		return s.get(i).getMarca();
+		return s[i].getMarca();
 	}
 	
 	public int getTamanho(int i) {
-		return s.get(i).getTamanho();
+		return s[i].getTamanho();
 	}
 	
 	public String getCor(int i) {
-		return s.get(i).getCor();
+		return s[i].getCor();
 	}
 	
 	public String getMaterial(int i) {
-		return s.get(i).getMaterial();
+		return s[i].getMaterial();
 	}
 	
 	public String getGenero(int i) {
-		return s.get(i).getGenero();
+		return s[i].getGenero();
 	}
 
 	public double getTaxaLucro(int i) {
-		return s.get(i).getTaxaLucro();
+		return s[i].getTaxaLucro();
 	}
 	
 	public String getTipo(int i) {
-		return s.get(i).getTipo();
+		return s[i].getTipo();
 	}
 	
 	public String getFaixaEtaria(int i) {
-		return s.get(i).getFaixaEtaria();
+		return s[i].getFaixaEtaria();
 	}
 }

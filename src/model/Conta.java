@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Conta {
+public class Conta {
 	private int idConta;
 	private String usuario;
 	private String senha;

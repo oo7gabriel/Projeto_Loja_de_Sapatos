@@ -2,19 +2,15 @@ package view;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import model.Administrador;
-import model.Funcionario;
+import controller.Controle_Dados;
 
 public class Login_Menu implements ActionListener {
 	
@@ -27,7 +23,7 @@ public class Login_Menu implements ActionListener {
 	private JTextField usuarioCampo;
 	private JPasswordField senhaCampo;
 	private static JButton logar;
-	
+	private Controle_Dados d;
 	
 	public Login_Menu() {
 		tituloLogin.setFont(new Font("Arial", Font.ITALIC, 14));
@@ -73,15 +69,20 @@ public class Login_Menu implements ActionListener {
 		Login_Menu menuLogin = new Login_Menu();
 		
 		logar.addActionListener(menuLogin);
+		
+		System.out.println();
+		
 	}
 	
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String validaUsuario = usuarioCampo.getText();
 		String validaSenha = senhaCampo.getText();// O .getText() do valida senha está depreciado.
 		
-		if(validaUsuario.trim().equals("Admin") && validaSenha.trim().equals("1234")) {
+				
+		if(validaUsuario.trim().matches("Admin") && validaSenha.trim().matches("123456")) {
 			System.out.println("Login Admin OK!");
 			new Menu_Admin();
 			
@@ -95,21 +96,6 @@ public class Login_Menu implements ActionListener {
 			
 			janelaLogin.dispose();
 			
-		}else if(validaUsuario.trim().equals("") && validaSenha.trim().equals("")){
-			JOptionPane.showMessageDialog(null, 
-					"Erro Login Inválido", null, 
-					JOptionPane.INFORMATION_MESSAGE);
-			
-		} else if(validaUsuario.trim().equals("")){
-			JOptionPane.showMessageDialog(null, 
-					"Erro Usuario Inválido", null, 
-					JOptionPane.INFORMATION_MESSAGE);
-			
-		}else if(validaSenha.trim().equals("")){
-			JOptionPane.showMessageDialog(null, 
-					"Erro Senha Inválida", null, 
-					JOptionPane.INFORMATION_MESSAGE);
-		
 		}
 		
 	}

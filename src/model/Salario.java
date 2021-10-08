@@ -1,25 +1,25 @@
 package model;
 
-import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Salario {
 
-	private SimpleDateFormat mes;
+	private Date mes;
 	private double salarioFixo ;
 	
 	public Salario() {
 	}
 
-	public Salario(SimpleDateFormat mes, double salarioFixo) {
+	public Salario(Date mes, double salarioFixo) {
 		this.mes = mes;
 		this.salarioFixo = salarioFixo;
 	}
 
-	public SimpleDateFormat getMes() {
+	public Date getMes() {
 		return mes;
 	}
 
-	public void setMes(SimpleDateFormat mes) {
+	public void setMes(Date mes) {
 		this.mes = mes;
 	}
 

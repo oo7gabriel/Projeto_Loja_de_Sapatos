@@ -2,6 +2,12 @@ package model;
 
 public class Cliente {
 
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", nomeCliente=" + nomeCliente + ", telefoneCliente="
+				+ telefoneCliente + ", cpfCliente=" + cpfCliente + ", endCliente=" + endCliente + "]";
+	}
+
 	private int idCliente;
 	private String nomeCliente;
 	private String telefoneCliente;

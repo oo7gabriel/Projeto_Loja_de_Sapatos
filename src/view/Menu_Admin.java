@@ -129,7 +129,7 @@ public class Menu_Admin implements ActionListener, MenuListener{
 		
 		janelaAdmin.add(tituloAdmin);
 		
-		janelaAdmin.setSize(1280, 720);
+		janelaAdmin.setSize(900, 600);
 		janelaAdmin.setResizable(false);
 		janelaAdmin.setLocationRelativeTo(null);
 		janelaAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

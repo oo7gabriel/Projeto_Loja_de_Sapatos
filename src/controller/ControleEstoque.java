@@ -1,23 +1,20 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.Estoque;
 
 public class ControleEstoque {
-	private List<Estoque> est;
+	private Estoque[] est;
 	private int qtdEstoq;
 	
 	public ControleEstoque(Controle_Dados dado) {
 		est = dado.getEstoque();
-		qtdEstoq = est.size();
+		qtdEstoq = dado.getQtdEstque();
 	}
 	
-	public List<Integer> getNomeEstoqueL() {
-		List<Integer> s = new ArrayList<Integer>(qtdEstoq);
+	public Integer[] getNomeEstoqueL() {
+		Integer s[] = new Integer[qtdEstoq];
 		for(int i = 0; i < qtdEstoq; i++) {
-			s.add(est.get(i).getIdEstoque());
+			s[i] = est[i].getIdEstoque();
 		}
 		
 		return s;
@@ -32,10 +29,10 @@ public class ControleEstoque {
 	}
 	
 	public int getIdEstoque(int i) {
-		return est.get(i).getIdEstoque();
+		return est[i].getIdEstoque();
 	}
 	
 	public int getQuantidade(int i) {
-		return est.get(i).getQuantidade();
+		return est[i].getQuantidade();
 	}
 }

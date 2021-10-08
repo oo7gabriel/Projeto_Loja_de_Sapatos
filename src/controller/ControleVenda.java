@@ -1,8 +1,6 @@
 package controller;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 import model.Cliente;
 import model.Funcionario;
@@ -11,18 +9,18 @@ import model.Venda;
 
 public class ControleVenda {
 
-	private List<Venda> v;
+	private Venda[] v;
 	private int qtdVendas;
 	
 	public ControleVenda(Controle_Dados dado) {
 		v = dado.getVenda();
-		qtdVendas = v.size();
+		qtdVendas = dado.getQtdVen();
 	}
 	
-	public List<Integer> getNomeVendaL() {
-		List<Integer> s = new ArrayList<Integer>(qtdVendas);
+	public Integer[] getNomeVendaL() {
+		Integer[] s = new Integer[qtdVendas];
 		for(int i = 0; i < qtdVendas; i++) {
-			s.add(v.get(i).getIdVenda());
+			s[i] = v[i].getIdVenda();
 		}
 		
 		return s;
@@ -37,27 +35,27 @@ public class ControleVenda {
 	}
 	
 	public int getIdVenda(int i) {
-		return v.get(i).getIdVenda();
+		return v[i].getIdVenda();
 	}
 	
-	public SimpleDateFormat getDataVenda(int i) {
-		return v.get(i).getDataVenda();
+	public Date getDataVenda(int i) {
+		return v[i].getDataVenda();
 	}
 
-	public SimpleDateFormat getHoraVenda(int i) {
-		return v.get(i).getHoraVenda();
+	public Date getHoraVenda(int i) {
+		return v[i].getHoraVenda();
 	}
 
 	public double getCommissaoVenda(int i) {
-		return v.get(i).getCommissaoVenda();
+		return v[i].getCommissaoVenda();
 	}
 
 	public Cliente getClie(int i) {
-		return v.get(i).getClie();
+		return v[i].getClie();
 	}
 	
 	public Funcionario getFunc(int i) {
-		return v.get(i).getFunc();
+		return v[i].getFunc();
 	}
 
 }

@@ -1,24 +1,22 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.Cliente;
 import model.Endereco;
 
 public class ControleCliente {
-	private List<Cliente> c;
+	private Cliente[] c  = new Cliente[100];
 	private int qtdCliente;
+	
 	
 	public ControleCliente(Controle_Dados dado) {
 		c = dado.getCliente();
-		qtdCliente = c.size();
+		qtdCliente = dado.getQtdClien();
 	}
 	
-	public List<String> getNomeClienL() {
-		List<String> s = new ArrayList<String>(qtdCliente);
+	public String[] getNomeClienL() {
+		String[] s = new String[qtdCliente];
 		for(int i = 0; i < qtdCliente; i++) {
-			s.add(c.get(i).getNomeCliente());
+			s[i] = c[i].getNomeCliente();
 		}
 		
 		return s;
@@ -33,23 +31,23 @@ public class ControleCliente {
 	}
 	
 	public int getIdCliente(int i) {
-		return c.get(i).getIdCliente();
+		return c[i].getIdCliente();
 	}
 	
 	public String getNomeCliente(int i) {
-		return c.get(i).getNomeCliente();
+		return c[i].getNomeCliente();
 	}
 	
 	public String getTelefoneCliente(int i) {
-		return c.get(i).getTelefoneCliente();
+		return c[i].getTelefoneCliente();
 	}
 	
 	public String getCpfCliente(int i) {
-		return c.get(i).getCpfCliente();
+		return c[i].getCpfCliente();
 	}
 	
 	public Endereco getEndCliente(int i) {
-		return c.get(i).getEndCliente();
+		return c[i].getEndCliente();
 	}
 	
 }
